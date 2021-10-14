@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS 5.1.1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>Dojos</title>
+</head>
+
+<body>
+    <div class ="d-flex justify-content-between align-items-center col-10">
+        <h1 class="text-center text-dark">Add a Ninja</h1>
+        <div class="d-flex colc-6 justify-content-around">
+            <a href="/" class="btn btn-secondary d-flex justify-content-end mx-3" >Home</a>
+        </div>
+    </div>
+
+
+        <form action="/dojo/create_ninja" method="POST"class="mx-auto col-8 p-5 bg-secondary text-light my-5">
+            <h2 class="text-primary text-warning ">Add a Ninja Form</h2>
+            <div class="d-flex justify-content-between col-12">
+                <div class= "col-8">
+                    <div class="form-group ">
+                        <label for="fname"> First Name </label>
+                        <input type="text" name="first_name" class="form-control">
+                    </div>
+                    <div class="form-group ">
+                        <label for="lname"> Last Name </label>
+                        <input type="text" name="last_name" class="form-control">
+                    </div>
+                    <div class="form-group ">
+                        <label for="em"> Age </label>
+                        <input type="text" name="age" class="form-control">
+                    </div>
+                    <div class="form-group ">
+                        <label for="dojos">Choose a Dojo:</label>
+                        <select name="dojo_id" id="dojos"class="form-control">
+                    </div>
+                            {% for one_dojo in dojos %}
+
+                <option value="{{one_dojo.id}}">{{one_dojo.name}}</option>
+                {% endfor %}
+            </select>
+            <div>
+            <input type="submit" class='btn btn-primary' value="Add Ninja">
+            </div>
+        </form>
+    </div>
+
+
+
+
+    
+</body>
+</html>
+
